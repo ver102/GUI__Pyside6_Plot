@@ -1,11 +1,14 @@
 {
     "input_dir": [
-        "C:/Users/USER/Desktop/20220803"
+        "C:/Users/USER/Desktop/20220804"
     ],
     "save_dir": [
-        "C:/Users/USER/Desktop/20220803/save"
+        "C:/Users/USER/Desktop/20220804"
     ],
-    "default_path": [
+    "default_dir": [
         "C:/Users/USER/Desktop"
+    ],
+    "config_dir": [
+        "C:/Users/USER/PycharmProjects/GUI_Pyside6_Plot"
     ]
 }
