@@ -50,7 +50,6 @@ class MainWindow(QMainWindow, Ui_Dialog) :
 
         self.input_find.clicked.connect(self.input_path_find)
         self.save_find.clicked.connect(self.save_path_find)
-        self.json_find.clicked.connect(self.config_path_find)
 
         self.input_name = self.read_cf.get('input_dir')[0]
         if self.input_name == "":
@@ -58,12 +57,9 @@ class MainWindow(QMainWindow, Ui_Dialog) :
         self.save_name = self.read_cf.get('save_dir')[0]
         if self.save_name == "":
             self.save_name = self.read_cf.get('default_dir')[0]
-        self.config_name = self.read_cf.get('config_dir')[0]
-        self.config_path = self.config_name + '\\test.json'
 
         self.save_path.setText(self.save_name)
         self.input_path.setText(self.input_name)
-        self.json_path.setText(self.config_name)
 
         self.input_image_dir = self.input_name + "\\Far Pointing"
         self.input_energy_dir = self.input_name + "\\Energy"
@@ -92,14 +88,6 @@ class MainWindow(QMainWindow, Ui_Dialog) :
         self.save_name= QFileDialog.getExistingDirectory(self, 'Open file', './',  options=options)
         self.save_path.setText(self.save_name)
         self.read_cf['save_dir'] = [self.save_name]
-        self.save_config_to_json()
-
-    def config_path_find(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.ReadOnly  # Make the file read-only
-        self.config_name= QFileDialog.getExistingDirectory(self, 'Open file', './',  options=options)
-        self.json_path.setText(self.config_name)
-        self.read_cf['config_dir'] = [self.config_name]
         self.save_config_to_json()
 
     def update_comBox(self):
