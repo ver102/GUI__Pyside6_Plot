@@ -85,7 +85,7 @@ class MainWindow(QMainWindow, Ui_Dialog) :
     def save_path_find(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly  # Make the file read-only
-        self.save_name= QFileDialog.getExistingDirectory(self, 'Open file', './',  options=options)
+        self.save_name = QFileDialog.getExistingDirectory(self, 'Open file', './',  options=options)
         self.save_path.setText(self.save_name)
         self.read_cf['save_dir'] = [self.save_name]
         self.save_config_to_json()
